@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'gender', 'favorite_sake_name', 'user_self_introduction', 'image', 'sake_category_id' 
     ];
 
     /**
@@ -28,6 +28,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
 
     /**
      * The attributes that should be cast to native types.
@@ -48,5 +49,9 @@ class User extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new PasswordResetNotification($token));
+    }
+
+    public function sake_category() {
+        return $this->belongsTo('App\SakeCategory');
     }
 }
