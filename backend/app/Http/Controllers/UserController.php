@@ -17,7 +17,12 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('users.index');
+        $user = Auth::user();
+        $user->load('sake_category');
+
+        return view('users.index', [
+            'user' => $user
+        ]);
     }
 
     /**

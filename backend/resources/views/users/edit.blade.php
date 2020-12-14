@@ -42,18 +42,12 @@
 
                     <div class="form-group row">
                         <label for="favorite_sake_name" class="col-md-5 col-form-label">好きなお酒</label>
-                        <textarea type="text" class="col-md-6 form-control" 　rows="2" id="exampleInputName"
-                            name="favorite_sake_name">
-                            {{ $user->favorite_sake_name }}
-                        </textarea>
+                        <textarea type="text" class="col-md-6 form-control" 　rows="2" id="exampleInputName"name="favorite_sake_name">{{ $user->favorite_sake_name }}</textarea>
                     </div>
 
                     <div class="form-group row">
                         <label for="user_self_introduction" class="col-md-5 col-form-label">自己紹介</label>
-                        <textarea type="text" class="col-md-6 form-control" rows="4" id="exampleInputName"
-                            name="user_self_introduction">
-                            {{ $user->user_self_introduction }}
-                        </textarea>
+                        <textarea type="text" class="col-md-6 form-control" rows="4" id="exampleInputName"name="user_self_introduction">{{ $user->user_self_introduction }}</textarea>
                     </div>
 
                     <div class="text-center">
