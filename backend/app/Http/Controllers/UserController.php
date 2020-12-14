@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 use App\SakeCategory;
+
 
 class UserController extends Controller
 {
@@ -80,8 +82,14 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = Auth::id();
-        
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->gender = $request->gender;
+        $user->sake_category_id = $request->sake_category_id;
+        $user->favorite_sake_name = $request->favorite_sake_name;
+        $user->user_self_introduction = $request->user_self_introduction;
+        $user->save();
+        return redirect()->route('users.index');
     }
 
     /**
