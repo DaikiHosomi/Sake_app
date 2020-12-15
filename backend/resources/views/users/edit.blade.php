@@ -4,6 +4,15 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="card col-md-10">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                    </ul>
+                </div>
+            @endif
             <form action="{{ route('users.update', $user->id) }}" method="POST">
                 @method('PATCH')
                 @csrf
@@ -27,7 +36,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="sake_categiry" class="col-md-5 col-form-label">好きなお酒カテゴリー</label>
+                        <label for="sake_category" class="col-md-5 col-form-label">好きなお酒カテゴリー</label>
                         <select name="sake_category_id">
                             <option selected="">選択する</option>
                             @foreach ($sake_categories as $sake_category)

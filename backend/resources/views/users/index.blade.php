@@ -10,9 +10,11 @@
                     <div class="col-md-12 text-center">
                         <h3>{{ $user->name }}</h3>
                     </div>
+                    @if(isset($user->sake_category->name))
                     <div class="col-md-12 text-center">
                         <p>{{ $user->sake_category->name }}</p>
                     </div>
+                    @endif
                     <div class="col-md-12 text-center">
                         <p>{{ $user->favorite_sake_name }}</p>
                     </div>

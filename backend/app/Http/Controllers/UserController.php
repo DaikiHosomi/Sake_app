@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\SakeCategory;
+use App\Http\Requests\UserRequest;
 
 
 class UserController extends Controller
@@ -85,7 +86,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, $id)
     {
         $user = User::find($id);
         $user->name = $request->name;
